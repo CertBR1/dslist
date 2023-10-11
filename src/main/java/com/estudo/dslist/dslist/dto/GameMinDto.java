@@ -1,11 +1,8 @@
 package com.estudo.dslist.dslist.dto;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.estudo.dslist.dslist.entities.Game;
 
-public class GameDto {
+public class GameMinDto {
 
     private Long id;
     private String title;
@@ -13,15 +10,15 @@ public class GameDto {
     private String imgUrl;
     private String shortDescription;
 
-    public GameDto() {
+    public GameMinDto() {
     }
 
-    public GameDto(Long id, String title, Integer year, String imgUrl, String shortDescription) {
-        this.id = id;
-        this.title = title;
-        this.year = year;
-        this.imgUrl = imgUrl;
-        this.shortDescription = shortDescription;
+    public GameMinDto(Game entity) {
+        this.id = entity.getId();
+        this.title = entity.getTitle();
+        this.year = entity.getYear();
+        this.imgUrl = entity.getImgUrl();
+        this.shortDescription = entity.getShortDescription();
     }
 
     public Long getId() {
